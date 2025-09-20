@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server"
+import { createServerSupabaseClient } from "@/lib/supabase/server"
 import { ProductGrid } from "@/components/product-grid"
 import { CategoryFilter } from "@/components/category-filter"
 import { SearchBar } from "@/components/search-bar"
@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export default async function HomePage() {
-  const supabase = await createClient()
+  const supabase = createServerSupabaseClient()
 
   // Check if user is logged in
   const {
